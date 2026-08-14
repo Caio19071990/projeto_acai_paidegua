@@ -1,0 +1,191 @@
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #4a2f6e;
+    color: #e5dcf1;
+    padding: 30px;
+}
+
+/* ====================================================
+ MACROESTRUTURA: O Container Principal com Grid Areas
+ ======================================================*/
+
+ .portal-container {
+    display: grid;
+    max-width: 1800px;
+    margin: 0 auto;
+    gap: 30px;
+ 
+
+ /* Definido 2 colunas: Conteúdo flexível (1fr) e Sidebar (300px) */
+ grid-template-columns: 12fr 200px;
+
+ /* Definido linhas automátics para cada seção*/
+ grid-template-rows: auto auto 1fr auto;
+
+ /* Desenhando o Layout visualmente com áreas nomeadas */
+ grid-template-areas: 
+ "header header"
+ "main-story sidebar"
+ "news-grid sidebar"
+ "footer footer";
+ }
+
+ /* ====================================================
+    POSICIONAMENTO DOS ITENS NAS ÁREAS
+    ====================================================
+*/
+
+.portal-header {
+    grid-area: header;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold; /* Negrito */
+}
+
+.logo span {
+    color: rgb(217, 169, 248);
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;  /* tira o sublinhado */
+    margin-left: 30px;      /* Espaçamento a esquerda */
+    font-weight: 600; 
+    font-size: 20px; 
+    display: inline-flex; 
+    align-items: center;     
+    gap: 1px;
+    transition: color 0.25s ease, transform 0.25s; /* quando o mouse passar em cima do intem/texto muda de cor  */
+}
+
+/* efeito do menu */
+.nav-menu a:hover {
+    color: white;
+    transform: translatey(-8px);
+}
+
+
+
+/* borda com imagem maior */
+.main-story {
+
+    grid-area: main-story;
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 40px;
+    border-left: 6px solid rgb(176, 124, 211);
+    box-shadow: 0 4px 6px -1px rgba(44, 155, 29, 0.05); /* Sombreamento */
+    transition: transform 0.3 ease, box-shadow 0.3s ease;
+}
+
+/* Efeito da borda da imagem maior */
+.main-story:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 20px 30px -3px rgba(37, 99, 235, 0.08);
+}
+
+
+/* TEXTO 'CULINÁRIA PARAENSE' */
+.tag {
+    background-color: rgb(7, 141, 29);
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-flex;
+    text-align: center;
+    gap: 6px;
+    margin-bottom: 16px;
+    text-transform: uppercase;  /* torna todas letras maiusculas */
+    letter-spacing: 8px;
+}
+
+/* texto  'tem coisas que só existe no norte */
+.main-story h2{
+    font-size: 1.6rem;
+    color: rgb(63, 37, 82);
+    margin-bottom: 22px;
+    line-height: 1.4;
+    text-align: center
+}
+
+
+/* texto acima da imagem maior */
+.main-story p {
+    color: rgb(63, 37, 82);
+    font-size: 20px;
+    line-height: 2.0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+
+/* Rodapé */
+.portal-footer {
+    grid-area: footer;
+    background: rgb(118, 84, 141);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px; /* Borda */
+    font-size: 0.9rem; 
+}
+
+
+/* ============================================================
+ MICROESTRUTURA: Grade Responsiva de cards (sem media Queris!)
+============================================================== */
+.news-grid{
+    grid-area: news-grid;
+    display: grid;
+/* Mágica do Grid: Cria colunas automáticas de no minimo 250px que se expande com 1fr */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    text-align: center;
+    
+
+}
+
+/* borda dos cards */
+.card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-top: 3px solid rgb(63, 37, 82);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* texto do card */
+.card p {
+    font-size: 18px;
+    color: rgb(63, 37, 82);
+    line-height: 1.4;
+}
+
+.card-tag{
+    background: rgb(1, 134, 46);
+    color: #ffffff;
+    font-size: 25px;
+    border-radius: 20px;
+    padding: 2%;
+}
