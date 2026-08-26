@@ -119,6 +119,7 @@ body {
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     gap: 30px;
@@ -131,12 +132,15 @@ body {
         rgba(255, 255, 255, 0.09);
 
     backdrop-filter: blur(18px);
+
     -webkit-backdrop-filter: blur(18px);
 
     border-radius: var(--radius-md);
 
     box-shadow:
         0 10px 40px rgba(0, 0, 0, 0.12);
+
+    
 }
 
 
@@ -218,6 +222,9 @@ body {
     align-items: center;
 
     gap: 8px;
+
+    margin: 0 auto;
+
 }
 
 
@@ -270,136 +277,81 @@ body {
    HERO
    ========================================================= */
 
+.main-story {
 
+    grid-area: main-story;
 
-
-.hero-content {
-
-    padding: 55px;
-}
-
-
-.tag {
-
-    display: inline-flex;
-
-    padding: 10px 14px;
-
-    margin-bottom: 22px;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--green),
-            var(--green-dark)
-        );
-
-    color: white;
-
-    border-radius: 100px;
-
-    font-size: 0.75rem;
-    font-weight: 800;
-
-    letter-spacing: 1.5px;
-
-    text-transform: uppercase; /*Letra Maiuscula*/
-
-    transform: translateY(-2);
-
-    position: relative;
-
-}
-
-h1{
-    margin-bottom: 20px;
-
-    color: white;
-
-    background-color: #079730;
-
-    border-radius: 50px;
-
-    font-family: Georgia, serif;
-
-    font-size:30px;
+    display: inline-flex;  /* movimenta a imagem */
 
     display: flex;
 
     justify-content: center;
 
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(300px, 1.1fr);
+
     align-items: center;
 
-    gap: 24px;
+    overflow: hidden;
+
+    min-height: 560px;
+
+    background: #fff;
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    width: 80%;
 
     text-align: center;
 
-    width: 50%;
-    
-    height: 90px;
-
     margin: 0 auto;
 
+    
+
 }
+
+
+.hero-content {
+
+    padding: 55px;  /* enchimento do texto */
+}
+
 
 .main-story h1 {
 
     margin-bottom: 20px;
 
-    color: white;
+    color: var(--text-dark);
 
     font-family: Georgia, serif;
 
     font-size:
-        30px;
+        clamp(2rem, 4vw, 3.8rem);
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    text-align: center;
-
-    width: 50%;
-
-    margin: 0 auto;
-    
-}
-
-.pagamento{
-
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    text-align: center;
-    width: 200px;
-    height: 30px;
-    font-size: 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-img {
-    height: 100px;
-    width: 160px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items:flex;
-    gap: 34px;
-    text-align: center;
+    line-height: 1.08;
 }
 
 
+.main-story p {    /* texto */
 
+    max-width: 620px;
 
+    margin-bottom: 30px;
+
+    color: var(--text-light);
+
+    font-size: 1.20rem;
+
+    line-height: 1.8;
+}
 
 
 /* =========================================================
    BOTÃO
    ========================================================= */
-
-
 
 .hero-button,
 .whatsapp-button {
@@ -444,7 +396,7 @@ img {
     transform: translateY(-3px);
 
     box-shadow:
-        0 15px 30px rgba(76, 221, 117, 0.35);
+        0 15px 30px rgba(7, 145, 45, 0.35);
 }
 
 
@@ -477,10 +429,130 @@ img {
 .main-story:hover .hero-image img {
 
     transform: scale(1.05);
-   
 }
 
 
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+
+    grid-area: sidebar;
+
+    align-self: start;
+
+    padding: 28px;
+
+    background:
+        linear-gradient(
+            160deg,
+            rgba(255, 255, 255, 0.13),
+            rgba(255, 255, 255, 0.06)
+        );
+
+    border:
+        1px solid var(--glass-border);
+
+    border-radius: var(--radius-lg);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+
+.sidebar-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 28px;
+}
+
+
+.sidebar-icon {
+
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+
+    place-items: center;
+
+    color: white;
+
+    background: var(--green);
+
+    border-radius: 14px;
+
+    font-size: 1.2rem;
+}
+
+
+.eyebrow {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--green-light);
+
+    font-size: 0.72rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+.sidebar h2 {
+
+    font-family: Georgia, serif;
+
+    font-size: 1.5rem;
+}
+
+
+.sidebar-item {
+
+    position: relative;
+
+    display: flex;
+
+    gap: 15px;
+
+    padding: 20px 0;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+.sidebar-item span {
+
+    color: var(--green-light);
+
+    font-size: 0.8rem;
+
+    font-weight: 800;
+}
+
+
+.sidebar-item p {
+
+    color: #e3dce6;
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+}
 
 
 /* =========================================================
@@ -500,10 +572,6 @@ img {
         );
 
     gap: 24px;
-
-    width: 80%;
-
-    margin: 0 auto;
 }
 
 
@@ -511,7 +579,7 @@ img {
 
     overflow: hidden;
 
-    background: rgb(55, 5, 82);
+    background: white;
 
     border-radius: var(--radius-md);
 
@@ -565,6 +633,34 @@ img {
 }
 
 
+.card-number {
+
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    color: white;
+
+    background:
+        rgba(38, 16, 47, 0.75);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 50%;
+
+    backdrop-filter: blur(8px);
+
+    font-weight: 800;
+}
 
 
 /* =========================================================
@@ -577,6 +673,49 @@ img {
 }
 
 
+.card-tag {
+
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    margin-bottom: 12px;
+
+    color: var(--green-dark);
+
+    background: #e8f7ed;
+
+    border-radius: 100px;
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+
+.card h2 {
+
+    margin-bottom: 12px;
+
+    color: var(--text-dark);
+
+    font-family: Georgia, serif;
+
+    font-size: 1.35rem;
+}
+
+
+.card p {
+
+    color: var(--text-light);
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+}
+
 
 /* =========================================================
    CONTATO
@@ -584,14 +723,18 @@ img {
 
 .contact-section {
 
+    margin: 0 auto;
+
     grid-area: contact;
 
     display: flex;
 
     align-items: center;
-    justify-content: space-between;
+
+    justify-content: center;
 
     gap: 30px;
+    
 
     padding: 40px;
 
@@ -646,17 +789,6 @@ img {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* =========================================================
    FOOTER
    ========================================================= */
@@ -678,6 +810,8 @@ img {
     text-align: center;
 
     backdrop-filter: blur(15px);
+
+    margin: 0 auto;
 }
 
 
@@ -1037,4 +1171,6 @@ body::before {
     /* Controle da opacidade (0.0 a 1.0) */
     opacity: 0.3; 
 }
+
+
 
