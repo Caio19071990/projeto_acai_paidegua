@@ -48,6 +48,37 @@ body {
 }
 
 
+
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px; /* Distância do fundo de tela */
+    right: 20px;  /*Distância da lateral direita */
+    width: 80px;  /* largura do botão */
+    height: 80px; /* Altura do botão */
+    z-index: 1000;  /* garante que ele fique na frente de tudo */
+    border-radius: 50%;  /* Deixa o botão redondo */
+    transition: transform 0.3s ease; /* Animação suave ao passar o mouse */
+ }
+
+ /* EFEITO DE AUMENTAR LEVEMENTE AO PASSAR O MOUSE */
+
+ .whatsapp-btn:hover {
+    transform: scale(1.1);
+ }
+
+ .whatsapp-btn img {
+    width: 150%;
+    height: 100%;
+ }
+
+
+
+
+
+
+
+
+
 /* =========================================================
    VARIÁVEIS
    ========================================================= */
